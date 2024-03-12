@@ -1,12 +1,13 @@
-import {http} from "../common/http.ts";
+import {http, http_post} from "../common/http.ts";
 import {Api} from "../common/api.ts";
 import {ModuleType} from "../type/module.ts";
+import {Token} from "../type/base.ts";
 
 export const loginOrRegisterApi = (
     username: string,
     password: string
 ) => {
-    return http({
+    return http<Token>({
         url: Api.loginOrRegister,
         method: 'post',
         data: {
@@ -16,8 +17,13 @@ export const loginOrRegisterApi = (
     })
 }
 export const queryModuleApi = () => {
-    return http<ModuleType[]>({
+    return http_post<ModuleType[]>({
         url: Api.queryModule,
-        method: 'post'
+    })
+}
+
+export const queryArticleApi = () => {
+    return http_post<ModuleType[]>({
+        url: Api.queryArticle,
     })
 }

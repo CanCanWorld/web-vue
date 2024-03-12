@@ -3,4 +3,5 @@ export const Api = {
     login: '/user/login',
     loginOrRegister: '/user/loginOrRegister',
     queryModule: '/queryModule',
+    queryArticle: '/queryArticle',
 }
